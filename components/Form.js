@@ -13,15 +13,16 @@ const AddLink = ({ onAdd }) => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Type your link here..."
+        placeholder="Type your link here"
         onChangeText={setLink}
         value={link}
-        maxLength={255}
+        maxLength={128}
         onSubmitEditing={onSubmit}
         autoComplete="off"
         autoCorrect={false}
         textContentType="URL"
         autoCapitalize="none"
+        blurOnSubmit={true}
       />
       <Pressable style={styles.submit} onPress={onSubmit}>
         <Text style={styles.submitText}>Cut.It</Text>

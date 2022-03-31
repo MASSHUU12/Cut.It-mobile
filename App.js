@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 
 import AddLink from "./components/Form";
+import Result from "./components/Result";
+import Notification from "./components/Notification";
 
 export default function App() {
+  const [result, setResult] = useState("");
+
   const submitLink = async (link) => {
-    console.log(link);
+    var header = new Headers();
+    header.append("Accept", "application/json");
+    header.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      link: link,
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: header,
+      body: raw,
+      redirect: "follow",
+    };
+
+    await fetch("http://192.168.1.3:8000/api/shorten", requestOptions)
+      .then((response) => response.json())
+      .then((result) => setResult(result))
+      .catch((error) => console.log("error", error));
   };
 
   return (
@@ -18,16 +40,16 @@ export default function App() {
         This one just makes your links shorter.
       </Text>
       <AddLink onAdd={submitLink} />
+      {result?.["message"] &&
+        (result["message"] != "Invalid link" ? (
+          <Result link={result["message"]} qr={result["qr"]} />
+        ) : (
+          <Notification content={"Invalid link"} press={() => setResult("")} />
+        ))}
       <StatusBar style="auto" />
     </View>
   );
 }
-
-/**
-$color-third: #454545;
-$color-fourth: #5d8aa8;
-$color-alt: #496f89;
-*/
 
 const styles = StyleSheet.create({
   container: {
