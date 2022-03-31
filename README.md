@@ -8,7 +8,6 @@
   - [Technologies](#technologies)
   - [Setup](#setup)
   - [Screenshots](#screenshots)
-      - [Homepage](#homepage)
   - [License](#license)
 
 <br />
@@ -47,9 +46,9 @@ $ npm start
 
 <br />
 
-#### Homepage
+![cutit-mobile-mockup](https://user-images.githubusercontent.com/61974579/161115705-e366c01d-3051-4fe1-bfbc-b9a23d2b389a.png)
 
-![cutit-mobile](https://user-images.githubusercontent.com/61974579/160449342-23c93e27-6fe9-4c8d-8a83-15939a77ef49.jpg)
+![cutit-mobile-result-mockup](https://user-images.githubusercontent.com/61974579/161116301-ecee056e-444e-494a-a1f2-23c7c144d562.png)
 
 ## License
 
