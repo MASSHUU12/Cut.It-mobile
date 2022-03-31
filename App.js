@@ -40,12 +40,19 @@ export default function App() {
         This one just makes your links shorter.
       </Text>
       <AddLink onAdd={submitLink} />
-      {result?.["message"] &&
-        (result["message"] != "Invalid link" ? (
-          <Result link={result["message"]} qr={result["qr"]} />
-        ) : (
-          <Notification content={"Invalid link"} press={() => setResult("")} />
-        ))}
+      {
+        // If the index "message" exists, the result will be displayed,
+        result?.["message"] &&
+          // unless it contains "Invalid link", in which case an error will be thrown
+          (result["message"] != "Invalid link" ? (
+            <Result link={result["message"]} qr={result["qr"]} />
+          ) : (
+            <Notification
+              content={"Invalid link"}
+              press={() => setResult("")}
+            />
+          ))
+      }
       <StatusBar style="auto" />
     </View>
   );

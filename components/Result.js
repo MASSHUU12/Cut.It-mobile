@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
+// The community solution does not want to work
 //!import Clipboard from "@react-native-community/clipboard";
 import {
   View,
@@ -15,6 +16,7 @@ const Result = ({ link, qr }) => {
   const [showQR, setShowQR] = useState(false);
 
   const copyLink = () => {
+    // Temporary solution
     Clipboard.setString(link);
   };
 
@@ -68,6 +70,7 @@ const styles = StyleSheet.create({
   text: {
     color: "#eeeeee",
     fontSize: 22,
+    textDecorationLine: "underline",
   },
   qr: {
     width: 256,
