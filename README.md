@@ -28,9 +28,7 @@ A mobile application developed with React Native that, using the [Cut.It](https:
 
 ## Setup
 
-To run this application locally, you must first clone this repository, and the [API](https://github.com/MASSHUU12/Cut.It) that handles the requests sent by the application
-
-Next, create a database named 'shortened' and make sure you have all the [technologies](https://github.com/MASSHUU12/Cut.It#technologies).
+To run this application locally, you must first clone this repository, and the [API](https://github.com/MASSHUU12/Cut.It) that handles the requests sent by the application, make sure you have all the [technologies](https://github.com/MASSHUU12/Cut.It#technologies).
 
 Now use the following commands on Windows (on MacOs/Linux use the equivalents of these commands), also start the server running the API according to the instructions on its page:
 
